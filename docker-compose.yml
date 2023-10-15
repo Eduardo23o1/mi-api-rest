@@ -7,6 +7,6 @@ services:
     image: nodejs
     container_name: nodejs
     ports:
-      - "3000:3000"
+      - "4000:4000"
     
       
