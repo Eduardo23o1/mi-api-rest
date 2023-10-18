@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 // Función para crear una conexión a la base de datos
 function createDBConnection() {
   const connection = mysql.createConnection({
-    host: '3.129.72.77', // Nombre o dirección IP del contenedor Docker MySQL
+    host: '3.137.165.9', // Nombre o dirección IP del contenedor Docker MySQL
     user: 'root',
     password: '1234', // La contraseña que configuraste al iniciar el contenedor MySQL
     database: 'cloud'
