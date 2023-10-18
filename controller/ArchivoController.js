@@ -1,14 +1,18 @@
 const Archivo = require('../models/Archivos');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+
+
 
 // Controlador para guardar un nuevo archivo
 exports.guardarArchivo = async (req, res) => {
-
     // Obtén los datos del archivo desde la solicitud (req.body)
     const nuevoArchivo = {
-      contenido_archivo: req.body.contenido_archivo,
+      contenido_archivo: req.file.buffer,
+      nombreDelArchivo: req.file.originalname,
       // Otras propiedades del archivo según tu modelo
     };
-
     // Llama a la función create del modelo Archivo
     Archivo.create(nuevoArchivo)
     .then((archivo) => {
