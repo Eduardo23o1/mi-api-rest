@@ -1,12 +1,15 @@
-version: '3'
+version: '3.8'
 services:
-  nodejs:
-    build:
-      context: .
+  nginx:
+    build: 
+      context: ./
       dockerfile: Dockerfile
-    image: nodejs
-    container_name: nodejs
+    container_name: nginx-server
+    restart: always
     ports:
-      - "4000:4000"
-    
+      - "4200:4200"
+    volumes:
+      - html:/usr/share/nginx/html/
+volumes:
+  html: {}
       
